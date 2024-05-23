@@ -37,17 +37,22 @@ function askForName() {
 }
 
 function askQuestion() {
-  // *** *** *** *** Part 2 #2
+  // *** *** *** *** *** *** *** *** *** Part 2 #2
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-candidateAnswer = input.question(question)
+//candidateAnswer = input.question(question)
+for (let i = 0; i < questions.length; i++) {
+  candidateAnswers[i] = input.question(questions[i]);
+  console.log("Your Answer: ", candidateAnswers[i]);
+  console.log("Correct Answer: ", correctAnswers[i], "\n");
 
+ }
 }
 
 function gradeQuiz(candidateAnswers) {
-
+// *** *** *** *** *** *** *** *** *** ***************************Part 2 #3
   // TODO 1.2c: Let the candidate know if they have answered 
   //the question correctly or incorrectly // 
-  // *** *** *** *** Part 2 #3
+
  if (candidateAnswer == "Sally Ride") {
   console.log("Correct!")
   } else {
@@ -56,7 +61,7 @@ function gradeQuiz(candidateAnswers) {
 
 
 
-
+// Part 3 ***************************************** Part 3
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
 
