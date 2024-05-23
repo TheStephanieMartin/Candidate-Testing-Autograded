@@ -37,6 +37,7 @@ function askForName() {
 }
 
 function askQuestion() {
+  // *** *** *** *** Part 2 #2
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 candidateAnswer = input.question(question)
 
@@ -46,6 +47,7 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered 
   //the question correctly or incorrectly // 
+  // *** *** *** *** Part 2 #3
  if (candidateAnswer == "Sally Ride") {
   console.log("Correct!")
   } else {
