@@ -27,7 +27,7 @@ let correctAnswers = [
   "3"
 ];
 
-let candidateAnswers = []
+let candidateAnswers = [];
 
 
 function askForName() {
@@ -52,18 +52,37 @@ function gradeQuiz(candidateAnswers) {
 // *** *** *** *** *** *** *** *** *** ***************************Part 2 #3
   // TODO 1.2c: Let the candidate know if they have answered 
   //the question correctly or incorrectly // 
+// From Part 1
+//  if (candidateAnswer == "Sally Ride") {
+//   console.log("Correct!")
+//   } else {
+//   console.log("Sorry. That's incorrect.")
+//  }
 
- if (candidateAnswer == "Sally Ride") {
-  console.log("Correct!")
-  } else {
-  console.log("Sorry. That's incorrect.")
- }
-
-
-
+let numOfCorrectAnswers = 0;
+let numOfQuestions = candidateAnswers.length;
+for (let i = 0; i < numOfQuestions; i++) {
+  if (candidateAnswers[i].toString().toLowerCase() === correctAnswers[i].toString().toLowerCase()) {
+    numOfCorrectAnswers += 1;
+  }
+}
+//^^^ That part drove me crazy >:(
+//console.log(numOfCorrectAnswers);
 // Part 3 ***************************************** Part 3
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+//TODO 3.2 use this variable to calculate the candidates score.
+  let grade = numOfCorrectAnswers / numOfQuestions * 100;
+  let candidateGrade = "";
 
+  if (grade >= 80) {
+    candidateGrade = "PASSED";
+  } else if (grade <= 60) {
+    candidateGrade = "FAILED";
+  }
+
+
+console.log(">>> Overall Grade: " + grade + "% " + "(" + numOfCorrectAnswers +
+ " of " + numOfQuestions + " responses correct) <<<");
+console.log("Status: " + candidateGrade);
 
   return grade;
 }
